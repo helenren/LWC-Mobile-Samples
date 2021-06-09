@@ -1,0 +1,15 @@
+{
+    "root": true,
+    "selector": {
+        "css": "body"
+    },
+    "elements": [
+        {
+            "name": "devserver-app",
+            "selector": {
+                "css": "localdevserver-app"
+            },
+            "public": true
+        }
+    ]
+}

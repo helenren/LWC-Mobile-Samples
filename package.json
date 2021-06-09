@@ -1,0 +1,33 @@
+{
+  "name": "myrepo-lwc-mobile-sample",
+  "version": "1.0.0",
+  "description": "Welcome to the Mobile Preview samples repo. Here, you can find sample projects and apps that let you preview Lightning web components several ways: - In your desktop browser - In the mobile browser of an iOS or Android virtual device - In a native app running on an iOS or Android virtual device",
+  "main": "index.js",
+  "scripts": {
+    "test": "wdio",
+    "clean": "rimraf pageObjects/ node_modules/",
+    "build": "yarn compile:utam",
+    "compile:utam": "utam -c utam.config.js"
+  },
+  "repository": "git+https://github.com/helenren/LWC-Mobile-Samples.git",
+  "keywords": [],
+  "author": "Qingchun Ren <qren@salesforce.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/helenren/LWC-Mobile-Samples/issues"
+  },
+  "homepage": "https://github.com/helenren/LWC-Mobile-Samples#readme",
+  "dependencies": {
+    "@wdio/cli": "^7.7.2"
+  },
+  "devDependencies": {
+    "@wdio/appium-service": "^7.7.0",
+    "@wdio/junit-reporter": "^7.7.3",
+    "@wdio/local-runner": "^7.7.3",
+    "@wdio/mocha-framework": "^7.7.3",
+    "@wdio/selenium-standalone-service": "^7.7.3",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.2",
+    "wdio-utam-service": "^0.0.6"
+  }
+}
