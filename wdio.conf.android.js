@@ -28,7 +28,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/**/*.js'
+        './test/specs/**/*.ts'
     ],
     // Patterns to exclude.
     exclude: [
@@ -61,17 +61,19 @@ exports.config = {
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
-        maxInstances: 1,
+        //maxInstances: 1,
         //
         platformName: 'Android',
+        'appium:autoWebview': true,
         'appium:orientation': 'PORTRAIT',
         'appium:automationName': 'UiAutomator2',
         'appium:deviceName': 'emulator-5554',
-        'appium:app': '/Users/qren/Downloads/chatters/SApp-230.020.apk',
-        'appium:appActivity': 'com.salesforce.chatter.Chatter',
+        'appium:app': '/Users/qren/myrepo-lwc-mobile-sample/apps/android/LwcTestApp/app/build/outputs/app-debug.apk',
+        'appium:appActivity': '.MainActivity',
         'appium:appPackage': 'com.salesforce.chatter',
         'appium:noReset': true,
-        'appium:newCommandTimeout': 240
+        'appium:newCommandTimeout': 240,
+        'appium:optionalIntentArguments': '-e username Astro -e com.salesforce.mobile-tooling.componentname c/helloWorld -e com.salesforce.mobile-tooling.projectdir /Users/qren/myrepo-lwc-mobile-sample/HelloWorld'
     }],
     //
     // ===================
