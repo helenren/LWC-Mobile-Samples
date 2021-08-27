@@ -10,76 +10,89 @@
                 "selector": {
                     "css": "localdevserver-layout"
                 },
-                "shadow": {
-                    "elements": [
-                        {
-                            "name": "view",
-                            "selector": {
-                                "css": "localdevserver-view"
-                            },
-                            "shadow": {
-                                "elements": [
-                                    {
-                                        "name": "dynamic",
-                                        "selector": {
-                                            "css": "localdevserver-dynamic"
-                                        },
-                                        "shadow": {
-                                            "elements": [
-                                                {
-                                                    "name": "section",
-                                                    "selector": {
-                                                        "css": "localdevserver-layout-section"
-                                                    },
-                                                    "shadow": {
-                                                        "elements": [
-                                                            {
-                                                                "name": "content",
-                                                                "selector": {
-                                                                    "css": "div.preview-conten div"
-                                                                }
-                                                            },
-                                                            {
-                                                                "name": "header-buttons",
-                                                                "type": "clickable",
-                                                                "selector": {
-                                                                    "css": "div.header-buttons",
-                                                                    "returnAll": true
-                                                                },
-                                                                "filter": {
-                                                                    "apply": "getText",
-                                                                    "findFirst": true,
-                                                                    "matcher": {
-                                                                        "type": "stringContains",
-                                                                        "args": [
-                                                                            {
-                                                                                "name": "partialText",
-                                                                                "type": "string"
-                                                                            }
-                                                                        ]
+                "elements": [
+                    {
+                        "name": "view",
+                        "selector": {
+                            "css": "localdevserver-view"
+                        },
+                        "shadow": {
+                            "elements": [
+                                {
+                                    "name": "dynamic",
+                                    "selector": {
+                                        "css": "localdevserver-dynamic"
+                                    },
+                                    "shadow": {
+                                        "elements": [
+                                            {
+                                                "name": "section",
+                                                "selector": {
+                                                    "css": "localdevserver-layout-section"
+                                                },
+                                                "elements": [
+                                                    {
+                                                        "name": "content",
+                                                        "selector": {
+                                                            "css": "localdevserver-dynamic"
+                                                        },
+                                                        "shadow": {
+                                                            "elements": [
+                                                                {
+                                                                    "name": "header",
+                                                                    "selector": {
+                                                                        "css": "h1"
                                                                     }
                                                                 }
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "header-title",
+                                                        "selector": {
+                                                            "css": "header h2[title='c-hello-world']"
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "header-button",
+                                                        "type": "clickable",
+                                                        "selector": {
+                                                            "css": "a.slds-button",
+                                                            "returnAll": true
+
+                                                        },
+                                                        "filter": {
+                                                            "apply": "getText",
+                                                            "findFirst": true,
+                                                            "matcher": {
+                                                                "type": "stringContains",
+                                                                "args": [
+                                                                    {
+                                                                        "name": "partialText",
+                                                                        "type": "string"
+                                                                    }
+                                                                ]
                                                             }
-                                                        ]
+                                                        }
                                                     }
-                                                }
-                                            ]
-                                        }
+                                                ]
+                                            }
+                                        ]
                                     }
-                                ]
-                            }
+                                }
+                            ]
                         }
-                    ]
-                }
+                    }
+                ]
             }
         ]
     },
     "methods": [
         {
-            "name": "getInnerText",
+            "name": "getTitle",
             "compose": [
                 {
-                    "element": "content",
+                    "element": "header-title",
                     "apply": "getText"
                 }
             ]
@@ -88,12 +101,21 @@
             "name": "clickButton",
             "compose": [
                 {
-                    "element": "header-buttons",
+                    "element": "header-button",
                     "apply": "waitForVisible"
                 },
                 {
-                    "element": "header-buttons",
+                    "element": "header-button",
                     "apply": "click"
+                }
+            ]
+        },
+        {
+            "name": "getContent",
+            "compose": [
+                {
+                    "element": "header",
+                    "apply": "getText"
                 }
             ]
         }
