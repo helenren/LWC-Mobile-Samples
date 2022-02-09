@@ -1,0 +1,27 @@
+{
+    "root": true,
+    "platform": "native",
+    "selector": {
+        "uiautomator": "resourceId(\"android:id/action_bar\")"
+    },
+    "methods": [
+        {
+            "name": "accept",
+            "compose": [
+                {
+                    "element": "iaccept",
+                    "apply": "click"
+                }
+            ]
+        }
+    ],
+    "elements": [
+        {
+            "type": ["clickable"],
+            "name": "iaccept",
+            "selector": {
+                "uiautomator": "resourceId(\"com.salesforce.chatter:id/mi_accept\")"
+            }
+        }
+    ]
+}

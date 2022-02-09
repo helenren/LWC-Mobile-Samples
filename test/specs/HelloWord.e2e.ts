@@ -1,4 +1,3 @@
-import { isExportDeclaration } from "typescript";
 import HelloWorld from "../../pageObjects/helloWord";
 
 describe('Test HelloWord Sample App', () => {

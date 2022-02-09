@@ -27,7 +27,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/**/HelloWord.e2e.ts'
+        './test/specs/**/SAppNativeiOS.e2e.ts'
     ],
     // Patterns to exclude.
     exclude: [
@@ -63,12 +63,10 @@ exports.config = {
         //maxInstances: 1,
         //
         platformName: 'iOS',
-        'appium:autoWebview': true,
         'appium:deviceName': 'iPhone 8 Plus',
-        'appium:app': '/Users/qren/deploy-fix/apps/ios/LwcTestApp/build/Debug-iphonesimulator/LwcTestApp.app',
+        'appium:app': '/Users/qren/Downloads/chatters/Chatter-234.app',
         'appium:automationName': 'XCUITest',
-        'appium:platformVersion': '13.4',
-        'appium:processArguments': {"args" : ["com.salesforce.mobile-tooling.componentname=c/helloWorld", "com.salesforce.mobile-tooling.projectdir=/Users/qren/myrepo-lwc-mobile-sample/HelloWorld", "ShowDebugInfoToggleButton=true", "username=Astro"]}
+        'appium:platformVersion': '13.4'
     }],
     //
     // ===================

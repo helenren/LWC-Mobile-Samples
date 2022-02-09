@@ -1,0 +1,27 @@
+{
+    "root": true,
+    "platform": "native",
+    "selector": {
+        "accessid": "Toolbar"
+    },
+    "methods": [
+        {
+            "name": "accept",
+            "compose": [
+                {
+                    "element": "iaccept",
+                    "apply": "click"
+                }
+            ]
+        }
+    ],
+    "elements": [
+        {
+            "type": ["clickable"],
+            "name": "iaccept",
+            "selector": {
+                "accessid": "EULA.agree"
+            }
+        }
+    ]
+}
