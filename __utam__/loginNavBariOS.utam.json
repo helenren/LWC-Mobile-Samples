@@ -1,0 +1,29 @@
+{
+    "root": true,
+    "platform": "native",
+    "selector": {
+      "classchain": "**/XCUIElementTypeNavigationBar[`name == 'Log In'`]"
+    },
+    "methods": [
+      {
+        "name": "chooseConnOption",
+        "compose": [
+          {
+            "element": "connBtn",
+            "apply": "click"
+          }
+        ]
+      }
+    ],
+    "elements": [
+      {
+        "name": "connBtn",
+        "type": [
+          "clickable"
+        ],
+        "selector": {
+          "accessid": "choose connection button"
+        }
+      }
+    ]
+  }
