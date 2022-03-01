@@ -63,6 +63,7 @@ exports.config = {
         //maxInstances: 1,
         //
         platformName: 'iOS',
+        'appium:autoWebview': true,
         'appium:deviceName': 'iPhone 8 Plus',
         'appium:app': '/Users/qren/Downloads/chatters/Chatter-234.app',
         'appium:automationName': 'XCUITest',
@@ -102,7 +103,7 @@ exports.config = {
     baseUrl: 'http://localhost',
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 10000,
+    waitforTimeout: 40000,
     //
     // Default timeout in milliseconds for request
     // if browser driver or grid doesn't send response

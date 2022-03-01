@@ -40,7 +40,7 @@
           "clickable"
         ],
         "selector": {
-          "uiautomator": "className(\"android.widget.RadioButton\").textContains(\"%s\")",
+          "uiautomator": "className('android.widget.RadioButton').textContains('%s')",
           "args": [
             {
               "name": "envName",

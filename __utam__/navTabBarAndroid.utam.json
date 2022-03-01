@@ -1,0 +1,81 @@
+{
+    "root": true,
+    "platform": "native",
+    "selector": {
+        "uiautomator": "resourceId(\"com.salesforce.chatter:id/tab_bar\")"
+    },
+    "methods": [
+        {
+            "name": "openMenuSection",
+            "compose": [
+                {
+                    "element": "openMenuBtn",
+                    "apply": "click"
+                }
+            ]
+        },
+        {
+            "name": "clickTabBarItem",
+            "compose": [
+                {
+                    "element": "tabBarBtn",
+                    "apply": "click"
+                }
+            ]
+        },
+        {
+            "name": "hasTabBarItem",
+            "compose": [
+                {
+                    "element": "root",
+                    "apply": "containsElement",
+                    "args": [
+                        {
+                            "type" : "locator",
+                            "value": {
+                                "uiautomator": "resourceId(\"com.salesforce.chatter:id/tabbar_item_name\").text(\"%s\")",
+                                "args": [
+                                    {
+                                        "name": "item",
+                                        "type": "string"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "elements": [
+        {
+            "name": "openMenuBtn",
+            "type": ["clickable"],
+            "selector": {
+                "uiautomator": "resourceId(\"com.salesforce.chatter:id/more_id\")"
+            }
+        },
+        {
+            "name": "tabBarBtn",
+            "type": ["clickable"],
+            "selector": {
+                "uiautomator": "resourceId(\"com.salesforce.chatter:id/tabbar_item_name\").text(\"%s\")",
+                "args": [
+                    {
+                        "name": "item",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name" : "tabBarItems",
+            "type": ["clickable"],
+            "public" : true,
+            "selector": {
+                "uiautomator": "resourceId(\"com.salesforce.chatter:id/tabbar_item_name\")",
+                "returnAll" : true
+            }
+        }
+    ]
+}

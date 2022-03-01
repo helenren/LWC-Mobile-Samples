@@ -1,0 +1,81 @@
+{
+    "root": true,
+    "platform": "native",
+    "selector": {
+        "accessid": "tab_bar"
+    },
+    "methods": [
+        {
+            "name": "openMenuSection",
+            "compose": [
+                {
+                    "element": "openMenuBtn",
+                    "apply": "click"
+                }
+            ]
+        },
+        {
+            "name": "clickTabBarItem",
+            "compose": [
+                {
+                    "element": "tabBarBtn",
+                    "apply": "click"
+                }
+            ]
+        },
+        {
+            "name": "hasTabBarItem",
+            "compose": [
+                {
+                    "element": "root",
+                    "apply": "containsElement",
+                    "args": [
+                        {
+                            "type" : "locator",
+                            "value": {
+                                "classchain": "**/XCUIElementTypeButton[`name == '%s'`]",
+                                "args": [
+                                    {
+                                        "name": "item",
+                                        "type": "string"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "elements": [
+        {
+            "name": "openMenuBtn",
+            "type": ["clickable"],
+            "selector": {
+                "accessid": "menu"
+            }
+        },
+        {
+            "name": "tabBarBtn",
+            "type": ["clickable"],
+            "selector": {
+                "classchain": "**/XCUIElementTypeButton[`name == '%s'`]",
+                "args": [
+                    {
+                        "name": "item",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name" : "tabBarItems",
+            "type": ["clickable"],
+            "public" : true,
+            "selector": {
+                "classchain": "**/XCUIElementTypeButton",
+                "returnAll" : true
+            }
+        }
+    ]
+}
